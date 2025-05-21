@@ -32,7 +32,7 @@ EOF
 sudo systemctl restart cron.service
 
 # Download first image if network is reachable
-if ping -w 10 8.8.8.8; then
+if ping -c 5 -n 8.8.8.8; then
 	wget -O /tmp/conditions.gif https://www.hamqsl.com/solar100sc.php?back=transparent
 	convert /tmp/conditions.gif /tmp/conditions.png
 fi
