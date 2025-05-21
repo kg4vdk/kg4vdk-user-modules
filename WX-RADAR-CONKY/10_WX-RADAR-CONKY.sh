@@ -27,7 +27,7 @@ module_commands () {
 
 # Define NWS Radar Station (e.g. KOHX), or leave empty for national map
 # https://www.roc.noaa.gov/branches/program-branch/site-id-database/site-id-location-maps.php
-NWS_STATION="KOHX"
+NWS_STATION=""
 
 # Sizes available: large, medium, small, tiny, tiny-integrated
 SIZE="tiny-integrated"
@@ -108,14 +108,14 @@ esac
 
 # Add to cron downloading image every minute
 cat << EOF | sudo tee --append /etc/crontab
-* * * * * user /usr/bin/wget -O /tmp/radar.gif https://radar.weather.gov/ridge/standard/${NWS_STATION}_0.gif || rm /tmp/radar.gif
+*/2 * * * * user /usr/bin/wget -O /tmp/radar.gif https://radar.weather.gov/ridge/standard/${NWS_STATION}_0.gif || rm /tmp/radar.gif
 EOF
 
 # Restart cron
 sudo systemctl restart cron.service
 
 # Download first image if network is reachable
-if ping -c 5 radar.weather.gov; then
+if ping -w 10 radar.weather.gov; then
 	wget -O /tmp/radar.gif https://radar.weather.gov/ridge/standard/${NWS_STATION}_0.gif
 fi
 
