@@ -9,7 +9,7 @@ MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/USER/$MODULE
 
 # Download paracon if not already done
 if [ ! -f ${MODULE_DIR}/bin/paracon_1.1.0.pyz ]; then
-	if ping -w 10 github.com; then
+	if ping -c 5 github.com; then
 		wget -O ${MODULE_DIR}/bin/paracon_1.1.0.pyz https://github.com/mfncooper/paracon/releases/download/v1.1.0/paracon_1.1.0.pyz
 	else
 		notify-send --icon=error "PARACON" "Unable to download from Github.\n\nCheck your internet connection and try again."
@@ -30,5 +30,5 @@ if ! pidof direwolf; then
 fi
 
 cd ${MODULE_DIR}/bin
-${MODULE_DIR}/bin/paracon_1.1.0.pyz
+${MODULE_DIR}/bin/paracon_1.1.0.pyz &
 
