@@ -25,14 +25,14 @@ module_commands () {
 
 # Add to cron downloading image every minute
 cat << EOF | sudo tee --append /etc/crontab
-* * * * * user /usr/bin/wget -O /tmp/conditions.gif https://www.hamqsl.com/solar100sc.php?back=transparent && /usr/bin/convert /tmp/conditions.gif /tmp/conditions.png || rm /tmp/conditions.gif
+*/5 * * * * user /usr/bin/wget -O /tmp/conditions.gif https://www.hamqsl.com/solar100sc.php?back=transparent && /usr/bin/convert /tmp/conditions.gif /tmp/conditions.png || rm /tmp/conditions.gif
 EOF
 
 # Restart cron
 sudo systemctl restart cron.service
 
 # Download first image if network is reachable
-if ping -c 5 8.8.8.8; then
+if ping -c 10 8.8.8.8; then
 	wget -O /tmp/conditions.gif https://www.hamqsl.com/solar100sc.php?back=transparent
 	convert /tmp/conditions.gif /tmp/conditions.png
 fi
