@@ -115,7 +115,7 @@ EOF
 sudo systemctl restart cron.service
 
 # Download first image if network is reachable
-if ping -w 10 radar.weather.gov; then
+if ping -c 5 radar.weather.gov; then
 	wget -O /tmp/radar.gif https://radar.weather.gov/ridge/standard/${NWS_STATION}_0.gif
 fi
 
