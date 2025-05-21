@@ -1,0 +1,18 @@
+To use this module:
+
+1) Place the PARACON directory in the USER Module directory:
+     - /ARCOS-DATA/QRV/CALLSIGN/arcos-linux-modules/USER
+
+2) Place the 00_PARACON.sh script in the USER Module directory, as well.
+     - One level up from where it is now.
+
+This module will download paracon from Github if a network connection is available and the software has not yet been downloaded.
+
+A "PARACON" launcher will be placed in the menu in the "Other" category.
+
+Paracon will be configured for your user.
+
+Notes:
+Direwolf must be running to serve as a packet modem. Please start Direwolf manually before starting paracon. Or, click "Retry" in paracon after you start direwolf.
+
+In multi-user installations, Paracon will remain configured for a previous user, if the next user does not also use this module.

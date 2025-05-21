@@ -1,0 +1,36 @@
+#!/bin/bash
+
+MODULE="PARACON"
+MYCALL=$(head -n 1 $HOME/.station-info)
+
+# PATHS
+ARCOS_DATA=/ARCOS-DATA
+MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/USER/$MODULE
+
+CHECKSUM="229179738cd9e497fefc4cfdf705fe74"
+
+# Download paracon if not already done
+if [ ! -f ${MODULE_DIR}/bin/paracon_1.1.0.pyz ]; then
+	if ping -c3 github.com; then
+		wget -O ${MODULE_DIR}/bin/paracon_1.1.0.pyz https://github.com/mfncooper/paracon/releases/download/v1.1.0/paracon_1.1.0.pyz
+	else
+		notify-send --icon=error "PARACON" "Unable to download from Github.\n\nCheck your internet connection and try again."
+	fi		
+fi
+
+# Create paracon.cfg if not existing
+if [ ! -f ${MODULE_DIR}/bin/paracon.cfg ]; then
+	cat << EOF > ${MODULE_DIR}/bin/paracon.cfg
+[Setup]
+host = localhost
+callsign = $MYCALL
+EOF
+fi
+
+if ! pidof direwolf; then
+	notify-send --icon=paracon-custom-icon "PARACON" "Please start DIREWOLF"
+fi
+
+cd ${MODULE_DIR}/bin
+${MODULE_DIR}/bin/paracon_1.1.0.pyz
+

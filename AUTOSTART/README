@@ -1,0 +1,16 @@
+To use this module:
+
+1) Place the AUTOSTART directory in the USER Module directory:
+     - /ARCOS-DATA/QRV/CALLSIGN/arcos-linux-modules/USER
+
+2) Place the 99_AUTOSTART.sh script in the USER Module directory, as well.
+     - One level up from where it is now.
+
+3) Open the 99_AUTOSTART.sh script in a text editor:
+     - Modify the QRV_PROFILE name and autostart applications to suit your preferences.
+     - Save the changes.
+
+Notes:
+The module will be active on the next reboot or re-run of Station Setup.
+
+To deactivate the module, place the 99_AUTOSTART.sh script back inside the AUTOSTART directory and reboot.
