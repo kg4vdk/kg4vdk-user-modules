@@ -27,7 +27,7 @@ module_commands () {
 
 # Define NWS Radar Station (e.g. KOHX), or leave empty for national map
 # https://www.roc.noaa.gov/branches/program-branch/site-id-database/site-id-location-maps.php
-NWS_STATION=""
+NWS_STATION="KOHX"
 
 # Sizes available: large, medium, small, tiny, tiny-integrated
 SIZE="tiny-integrated"
