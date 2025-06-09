@@ -3,7 +3,7 @@
 ################### USER DEFINED VARIABLES ###################
 
 # Define VNC passwd more secure than "$MYCALL"
-VNC_PASSWD="CQCQkg4vdk7373"
+VNC_PASSWD=""
 
 ################# END USER DEFINED VARIABLES ################
 
