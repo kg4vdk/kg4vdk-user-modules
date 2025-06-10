@@ -29,7 +29,7 @@ mkdir -p $HOME/.config/goa-1.0
 cp ${MODULE_DIR}/config/accounts.conf $HOME/.config/goa-1.0/
 sed -i "s/XXXUSERNAMEXXX/${MYCALL_LOWERCASE}/g" $HOME/.config/goa-1.0/accounts.conf
 
-cp ${MODULE_DIR}/docs/ARES-Taskbook.pdf $HOME/
+cp ${MODULE_DIR}/docs/{ARES-Taskbook.pdf,Net-Log.pdf} $HOME/
 
 } # END OF MODULE COMMANDS FUNCTION
 
