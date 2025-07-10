@@ -1,0 +1,25 @@
+: 1751828280:0;qrv
+: 1751828289:0;cda
+: 1751828294:0;cdd
+: 1751828303:0;cdm
+: 1751828305:0;cdo
+: 1751828307:0;cdq
+: 1751828336:0;sudo reboot
+: 1751836836:0;cdo
+: 1751836841:0;cd bin
+: 1751836852:0;nano iso-status
+: 1751836873:0;curl -L -s arcos-linux.com | grep .iso | awk -F " " '{print $3}' | awk -F "/" '{print $7}' | sed 's/.iso//'
+: 1751836940:0;cd
+: 1751836943:0;cdo/bin
+: 1751836950:0;cdo bin
+: 1751836955:0;cdobin
+: 1751836972:0;cdo/bin
+: 1751836975:0;cdo
+: 1751837177:0;watch-dir .
+: 1751837307:0;nano ./.local/share/applications/mimeinfo.cache
+: 1751837367:0;ls -l ./.local/share/applications/mimeinfo.cache
+: 1751837551:0;nano ./.local/share/applications/mimeinfo.cache
+: 1751850410:0;rm ./.local/share/applications/mimeinfo.cache
+: 1751850440:0;cdd && curl -L -s arcos-linux.com/xanadu
+: 1751850442:0;ls
+: 1751850457:0;cdd && curl -L -s arcos-linux.com/xanadu > index.html
