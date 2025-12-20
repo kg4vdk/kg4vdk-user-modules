@@ -1,43 +1,33 @@
 #!/bin/bash
 
-################### USER DEFINED VARIABLES ###################
+# MODULE NAME
+MODULE_NAME="PIAWARE-FEEDER"
 
-# Define feeder id
-FEEDER_ID=""
-
-################# END USER DEFINED VARIABLES ################
-
-#############################
-# PIAWARE-FEEDER QRV MODULE #
-#############################
-MODULE="PIAWARE-FEEDER"
+# MODULE TYPE
+MODULE_TYPE="USER"
 
 # STATION INFO
-MYCALL=$(head -n 1 $HOME/.station-info)
-MYNAME=$(head -n 2 $HOME/.station-info | tail -n 1)
-MYCITY=$(head -n 3 $HOME/.station-info | tail -n 1)
-MYST=$(head -n 4 $HOME/.station-info | tail -n 1)
-MYQTH="${MYCITY}, ${MYST}"
-MYLOC=$(head -n 5 $HOME/.station-info | tail -n 1)
+source "$HOME/.station-info"
 
 # PATHS
-ARCOS_DATA=/arcHIVE
-MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/USER/$MODULE
-LOGFILE=$MODULE_DIR/$MODULE.log
-SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
-########################
+ARCHIVE="/arcHIVE"
+MODULE_DIR="${ARCHIVE}/QRV/${MYCALL}/arcos-linux-modules/${MODULE_TYPE}/${MODULE_NAME}"
+LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
+
+################################
 
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-# If NWS Station is empty use the national map
+# Define the feeder ID
+FEEDER_ID=""
+
 if [ "${FEEDER_ID}" != "" ]; then
-	echo "${FEEDER_ID}" | sudo tee /var/cache/piaware/feeder_id
+	echo "${FEEDER_ID}" | sudo tee "/var/cache/piaware/feeder_id"
 	sudo systemctl restart piaware.service
 fi
 
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
-module_commands > $LOGFILE 2>&1 || notify-send --icon=error "$MODULE" "$MODULE module failed!"
-
+module_commands > "${LOGFILE}" 2>&1 || notify-send --icon=error "${MODULE_NAME}" "${MODULE_NAME} module failed!"

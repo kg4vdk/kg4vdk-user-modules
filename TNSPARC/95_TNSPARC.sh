@@ -1,19 +1,20 @@
 #!/bin/bash
 
-######################
-# TNSPARC QRV MODULE #
-######################
-MODULE="TNSPARC"
+# MODULE NAME
+MODULE_NAME="TNSPARC"
+
+# MODULE TYPE
+MODULE_TYPE="USER"
 
 # STATION INFO
-source $HOME/.station-info
+source "$HOME/.station-info"
 
 # PATHS
-ARCOS_DATA=/arcHIVE
-MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/USER/$MODULE
-LOGFILE=$MODULE_DIR/$MODULE.log
-SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
-########################
+ARCHIVE="/arcHIVE"
+MODULE_DIR="${ARCHIVE}/QRV/${MYCALL}/arcos-linux-modules/${MODULE_TYPE}/${MODULE_NAME}"
+LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
+
+################################
 
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
@@ -23,5 +24,5 @@ module_commands () {
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
-module_commands > $LOGFILE 2>&1 || notify-send --icon=error "$MODULE" "$MODULE module failed!"
+module_commands > "${LOGFILE}" 2>&1 || notify-send --icon=error "${MODULE_NAME}" "${MODULE_NAME} module failed!"
 
