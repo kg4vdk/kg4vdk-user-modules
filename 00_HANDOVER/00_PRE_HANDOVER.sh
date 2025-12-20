@@ -22,6 +22,8 @@ module_commands () {
 
 MY_MODULE_REPO="kg4vdk-user-modules"
 
+notify-send --icon=info "${MODULE_NAME}" "${MODULE_NAME} started (PRE)"
+
 for i in $(ls "${USER_MODULE_DIR}/${MY_MODULE_REPO}/*_PRE_*.sh"); do
     MODULE_NAME=$(basename $i)
     echo "${MODULE_NAME}"
