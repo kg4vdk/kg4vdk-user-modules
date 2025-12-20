@@ -13,13 +13,20 @@ source "$HOME/.station-info"
 ARCHIVE="/arcHIVE"
 MODULE_DIR="${ARCHIVE}/QRV/${MYCALL}/arcos-linux-modules/${MODULE_TYPE}/${MODULE_NAME}"
 LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
+USER_MODULE_DIR="${ARCHIVE}/QRV/${MYCALL}/arcos-linux-modules/USER"
 
 ################################
 
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-# commands here
+MY_MODULE_REPO="kg4vdk-user-modules"
+
+for i in $(ls "${USER_MODULE_DIR}/${MY_MODULE_REPO}/*.sh" | grep -v "_PRE_"); do
+    MODULE_NAME=$(basename $i)
+    echo "${MODULE_NAME}"
+    bash $i
+done
 
 } # END OF MODULE COMMANDS FUNCTION
 
