@@ -20,7 +20,7 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 module_commands () {
 
 SAVE_DIR="${MODULE_DIR}/config"
-mkdir -p "${SAVE_DIR}/{vscode-oss,VSCodium}"
+mkdir -p "${SAVE_DIR}"/{"vscode-oss","VSCodium"}
 
 unlink "$HOME/.vscode-oss"
 rm -rf "$HOME/.vscode-oss"
