@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # MODULE NAME
-MODULE_NAME="PIAWARE-FEEDER"
+MODULE_NAME="FLIGHTAWARE-FEEDER"
 
 # MODULE TYPE
 MODULE_TYPE="USER"
@@ -20,7 +20,11 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 module_commands () {
 
 # Define the feeder ID
-FEEDER_ID=""
+if [ -f "${MODULE_DIR}/feeder_id" ]; then
+	FEEDER_ID="$(cat "${MODULE_DIR}/feeder_id")"
+else
+	FEEDER_ID=""
+fi
 
 if [ "${FEEDER_ID}" != "" ]; then
 	echo "${FEEDER_ID}" | sudo tee "/var/cache/piaware/feeder_id"
