@@ -20,9 +20,8 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 module_commands () {
 
 SAVE_DIR="${MODULE_DIR}/SAVED"
-QRV_PROFILE_DIR="${ARCHIVE}/QRV/${MYCALL}/SAVED/PROFILES"
-
 mkdir -p "${SAVE_DIR}"
+
 if [ ! -f "${SAVE_DIR}/zsh_history" ]; then
 	touch "${SAVE_DIR}/zsh_history"
 fi
