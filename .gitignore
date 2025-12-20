@@ -1,0 +1,6 @@
+FLIGHTAWARE-FEEDER/feeder_id
+GIT/keys
+TRANSMISSION/config/transmission/dht.dat
+TRANSMISSION/config/transmission/settings.json.tmp*
+VSCODIUM/config
+*/*.log
