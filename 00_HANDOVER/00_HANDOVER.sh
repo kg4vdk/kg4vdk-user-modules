@@ -3,29 +3,24 @@
 # MODULE NAME
 MODULE_NAME="00_HANDOVER"
 
-# MODULE TYPE
-MODULE_TYPE="USER"
-
 # STATION INFO
 source "$HOME/.station-info"
 MYCALL_LOWER=$(echo "${MYCALL}" | tr '[:upper:]' '[:lower:]')
 
-# USER MODULE REPO
-MY_MODULE_REPO="${MYCALL_LOWER}-user-modules"
-
 # PATHS
 ARCHIVE="/arcHIVE"
-MODULE_DIR="${ARCHIVE}/QRV/${MYCALL}/arcos-linux-modules/${MODULE_TYPE}/${MY_MODULE_REPO}/${MODULE_NAME}"
-LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 USER_MODULE_DIR="${ARCHIVE}/QRV/${MYCALL}/arcos-linux-modules/USER"
+MY_MODULE_REPO="${USER_MODULE_DIR}/${MYCALL_LOWER}-user-modules"
+MODULE_DIR="${USER_MODULE_DIR}/${MY_MODULE_REPO}/${MODULE_NAME}"
+LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 
 ################################
 
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-if [ -f "${MODULE_DIR}/ENABLED_MODULES" ]; then
-    ENABLED_MODULES="$(cat ${MODULE_DIR}/ENABLED_MODULES)"
+if [ -f "${MY_MODULE_REPO}/ENABLED_MODULES" ]; then
+    ENABLED_MODULES="$(cat ${MY_MODULE_REPO}/ENABLED_MODULES)"
 else
     ENABLED_MODULES=""
 fi
@@ -33,7 +28,7 @@ fi
 if [ -n "${ENABLED_MODULES}" ]; then
     for i in $(echo "${ENABLED_MODULES}" | grep -v "_PRE_"); do
         MODULE_SCRIPT="$i"
-        MODULE_SCRIPT_FULL="$(find "${USER_MODULE_DIR}/${MY_MODULE_REPO}" -name "$i")"
+        MODULE_SCRIPT_FULL="$(find "${MY_MODULE_REPO}" -name "$i")"
         if [ -f "${MODULE_SCRIPT_FULL}" ]; then
             echo -n "Running ${MODULE_SCRIPT}..."
             bash "${MODULE_SCRIPT_FULL}"

@@ -3,19 +3,15 @@
 # MODULE NAME
 MODULE_NAME="GIT"
 
-# MODULE TYPE
-MODULE_TYPE="USER"
-
 # STATION INFO
 source "$HOME/.station-info"
 MYCALL_LOWER=$(echo "${MYCALL}" | tr '[:upper:]' '[:lower:]')
 
-# USER MODULE REPO
-MY_MODULE_REPO="${MYCALL_LOWER}-user-modules"
-
 # PATHS
 ARCHIVE="/arcHIVE"
-MODULE_DIR="${ARCHIVE}/QRV/${MYCALL}/arcos-linux-modules/${MODULE_TYPE}/${MY_MODULE_REPO}/${MODULE_NAME}"
+USER_MODULE_DIR="${ARCHIVE}/QRV/${MYCALL}/arcos-linux-modules/USER"
+MY_MODULE_REPO="${USER_MODULE_DIR}/${MYCALL_LOWER}-user-modules"
+MODULE_DIR="${USER_MODULE_DIR}/${MY_MODULE_REPO}/${MODULE_NAME}"
 LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 
 ################################
