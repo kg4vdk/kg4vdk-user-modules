@@ -19,11 +19,6 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-cp "${MODULE_DIR}/config/ssh-config" "$HOME/.ssh/config"
-cp "${MODULE_DIR}/keys/arcos-github-key" "$HOME/.ssh/"
-
-chmod 600 "$HOME/.ssh/arcos-github-key"
-
 git config --global user.email "mike@kg4vdk.com"
 git config --global user.name "Mike Fisher"
 

@@ -19,9 +19,12 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
+SAVE_DIR="${ARCHIVE}/QRV/${MYCALL}/SAVED/${MODULE_NAME}"
+mkdir -p "${SAVE_DIR}"
+
 # Define the feeder ID
-if [ -f "${MODULE_DIR}/feeder_id" ]; then
-	FEEDER_ID="$(cat "${MODULE_DIR}/feeder_id")"
+if [ -f "${SAVE_DIR}/FEEDER_ID" ]; then
+	FEEDER_ID="$(cat "${SAVE_DIR}/FEEDER_ID")"
 else
 	FEEDER_ID=""
 fi

@@ -19,7 +19,7 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-SAVE_DIR="${MODULE_DIR}/config"
+SAVE_DIR="${ARCHIVE}/QRV/${MYCALL}/SAVED/${MODULE_NAME}"
 mkdir -p "${SAVE_DIR}"/{"vscode-oss","VSCodium"}
 
 unlink "$HOME/.vscode-oss"
