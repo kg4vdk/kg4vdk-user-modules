@@ -19,7 +19,7 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-    cp "${MODULE_DIR}/docs/*" $HOME/
+    cp "${MODULE_DIR}"/docs/* $HOME/
 
 } # END OF MODULE COMMANDS FUNCTION
 

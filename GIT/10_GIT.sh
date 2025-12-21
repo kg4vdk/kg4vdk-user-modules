@@ -19,8 +19,8 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-git config --global user.email "mike@kg4vdk.com"
-git config --global user.name "Mike Fisher"
+git config --global user.email "${MYCALL_LOWER}@arcOS.local"
+git config --global user.name "${MYCALL}"
 
 } # END OF MODULE COMMANDS FUNCTION
 
