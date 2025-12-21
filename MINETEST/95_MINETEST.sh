@@ -11,7 +11,7 @@ MYCALL_LOWER=$(echo "${MYCALL}" | tr '[:upper:]' '[:lower:]')
 ARCHIVE="/arcHIVE"
 USER_MODULE_DIR="${ARCHIVE}/QRV/${MYCALL}/arcos-linux-modules/USER"
 MY_MODULE_REPO="${USER_MODULE_DIR}/${MYCALL_LOWER}-user-modules"
-MODULE_DIR="${USER_MODULE_DIR}/${MY_MODULE_REPO}/${MODULE_NAME}"
+MODULE_DIR="${MY_MODULE_REPO}/${MODULE_NAME}"
 LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 
 ################################
