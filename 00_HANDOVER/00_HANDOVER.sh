@@ -26,7 +26,7 @@ else
 fi
 
 if [ -n "${ENABLED_MODULES}" ]; then
-    for i in $(echo "${ENABLED_MODULES}" | grep -v "_PRE_"); do
+    for i in $(echo "${ENABLED_MODULES}" | grep -v "^#" | grep -v "^$" | grep -v "_PRE_"); do
         MODULE_SCRIPT="$i"
         MODULE_SCRIPT_FULL="$(find "${MY_MODULE_REPO}" -name "$i")"
         if [ -f "${MODULE_SCRIPT_FULL}" ]; then
