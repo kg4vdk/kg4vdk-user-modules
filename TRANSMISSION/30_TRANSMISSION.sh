@@ -27,7 +27,7 @@ if [ ! -f "${SAVE_DIR}config/transmission/settings.json" ]; then
 fi
 
 if [ ! -f "${SAVE_DIR}/config/transmission/torrents/8242f84b2f8c6fabddc639a485d77f66ac702d50.torrent" ]; then
-	cp -R "${MODULE_DIR}/config/transmissionfig/torrents" "${SAVE_DIR}/config/transmission/"
+	cp -R "${MODULE_DIR}/config/transmission/torrents" "${SAVE_DIR}/config/transmission/"
 fi
 
 if [ ! -f "${SAVE_DIR}/config/transmission/resume/8242f84b2f8c6fabddc639a485d77f66ac702d50" ]; then
