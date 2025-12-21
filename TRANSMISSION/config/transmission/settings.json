@@ -112,7 +112,7 @@
     "trash-original-torrent-files": false,
     "umask": "022",
     "upload-slots-per-torrent": 8,
-    "user-has-given-informed-consent": true,
+    "user-has-given-informed-consent": false,
     "utp-enabled": true,
     "watch-dir": "/home/user/Downloads",
     "watch-dir-enabled": false
