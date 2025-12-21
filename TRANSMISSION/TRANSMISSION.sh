@@ -22,7 +22,7 @@ module_commands () {
 SAVE_DIR="${ARCHIVE}/QRV/${MYCALL}/SAVED/${MODULE_NAME}"
 mkdir -p "${SAVE_DIR}/config/transmission"/{"resume","torrents"}
 
-if [ ! -f "${SAVE_DIR}config/transmission/settings.json" ]; then
+if [ ! -f "${SAVE_DIR}/config/transmission/settings.json" ]; then
 	cp "${MODULE_DIR}/config/transmission/settings.json" "${SAVE_DIR}/config/transmission/settings.json"
 fi
 

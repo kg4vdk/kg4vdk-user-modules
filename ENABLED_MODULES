@@ -6,5 +6,5 @@
 ###############################################
 
 ### EXAMPLES ###
-# 00_PRE_CUSTOM-MODULE.sh
-# 99_CUSTOM-MODULE.sh
+# MODULE-1.sh
+# MODULE-1.pre.sh
