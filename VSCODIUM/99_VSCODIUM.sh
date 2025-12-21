@@ -8,10 +8,14 @@ MODULE_TYPE="USER"
 
 # STATION INFO
 source "$HOME/.station-info"
+MYCALL_LOWER=$(echo "${MYCALL}" | tr '[:upper:]' '[:lower:]')
+
+# USER MODULE REPO
+MY_MODULE_REPO="${MYCALL_LOWER}-user-modules"
 
 # PATHS
 ARCHIVE="/arcHIVE"
-MODULE_DIR="${ARCHIVE}/QRV/${MYCALL}/arcos-linux-modules/${MODULE_TYPE}/${MODULE_NAME}"
+MODULE_DIR="${ARCHIVE}/QRV/${MYCALL}/arcos-linux-modules/${MODULE_TYPE}/${MY_MODULE_REPO}/${MODULE_NAME}"
 LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 
 ################################

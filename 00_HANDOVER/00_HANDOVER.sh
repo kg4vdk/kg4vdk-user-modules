@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # MODULE NAME
-MODULE_NAME="HANDOVER"
+MODULE_NAME="00_HANDOVER"
 
 # MODULE TYPE
 MODULE_TYPE="USER"
@@ -33,7 +33,7 @@ fi
 if [ -n "${ENABLED_MODULES}" ]; then
     for i in $(echo "${ENABLED_MODULES}" | grep -v "_PRE_"); do
         MODULE_SCRIPT="$i"
-        MODULE_SCRIPT_FULL="$(find "${USER_MODULE_DIR}/${MY_MODULE_REPO}" "$i")"
+        MODULE_SCRIPT_FULL="$(find "${USER_MODULE_DIR}/${MY_MODULE_REPO}" -name "$i")"
         if [ -f "${MODULE_SCRIPT_FULL}" ]; then
             echo -n "Running ${MODULE_SCRIPT}..."
             bash "${MODULE_SCRIPT_FULL}"
