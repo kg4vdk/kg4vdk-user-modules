@@ -6,5 +6,9 @@
 ###############################################
 
 ### EXAMPLES ###
-# MODULE-1.sh
 # MODULE-1.pre.sh
+# MODULE-1.sh
+
+GIT.sh
+TRANSMISSION.sh
+TNSPARC.sh

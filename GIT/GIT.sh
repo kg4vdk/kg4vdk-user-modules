@@ -19,8 +19,18 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-git config --global user.email "${MYCALL_LOWER}@arcOS.local"
-git config --global user.name "${MYCALL}"
+SAVE_DIR="${ARCHIVE}/QRV/${MYCALL}/SAVED/${MODULE_NAME}"
+mkdir -p "${SAVE_DIR}"
+
+if [ -f $SAVE_DIR/gitconfig ]; then
+	ln -sf $SAVE_DIR/gitconfig $HOME/.gitconfig
+else
+	touch $SAVE_DIR/gitconfig
+	rm $HOME/.gitconfig
+	ln -sf $SAVE_DIR/gitconfig $HOME/.gitconfig
+	git config --global user.email "${MYCALL_LOWER}@arcOS.local"
+	git config --global user.name "${MYCALL}"
+fi
 
 } # END OF MODULE COMMANDS FUNCTION
 

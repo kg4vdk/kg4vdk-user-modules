@@ -1,5 +1,0 @@
-Host github.com
-  HostName github.com
-  User git
-  IdentityFile /home/user/.ssh/arcos-github-key
-  IdentitiesOnly yes
