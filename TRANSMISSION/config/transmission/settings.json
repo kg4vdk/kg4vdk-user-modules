@@ -17,7 +17,7 @@
     "blocklist-url": "http://www.example.com/blocklist",
     "cache-size-mb": 4,
     "compact-view": false,
-    "default-trackers": "",
+    "default-trackers": "udp://tracker.opentrackr.org:1337/announce",
     "details-window-height": 532,
     "details-window-width": 700,
     "dht-enabled": true,

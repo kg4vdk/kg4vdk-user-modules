@@ -20,18 +20,10 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 module_commands () {
 
 SAVE_DIR="${ARCHIVE}/QRV/${MYCALL}/SAVED/${MODULE_NAME}"
-mkdir -p "${SAVE_DIR}/config/transmission"/{"resume","torrents"}
+mkdir -p "${SAVE_DIR}/config/transmission"
 
 if [ ! -f "${SAVE_DIR}/config/transmission/settings.json" ]; then
 	cp "${MODULE_DIR}/config/transmission/settings.json" "${SAVE_DIR}/config/transmission/settings.json"
-fi
-
-if [ ! -f "${SAVE_DIR}/config/transmission/torrents/8242f84b2f8c6fabddc639a485d77f66ac702d50.torrent" ]; then
-	cp -R "${MODULE_DIR}/config/transmission/torrents" "${SAVE_DIR}/config/transmission/"
-fi
-
-if [ ! -f "${SAVE_DIR}/config/transmission/resume/8242f84b2f8c6fabddc639a485d77f66ac702d50" ]; then
-	cp -R "${MODULE_DIR}/config/transmission/resume" "${SAVE_DIR}/config/transmission/"
 fi
 
 unlink "$HOME/.config/transmission"
