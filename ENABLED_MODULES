@@ -9,6 +9,12 @@
 # MODULE-1.pre.sh
 # MODULE-1.sh
 
+# PRE
+CUSTOM-ICONS.pre.sh
+TOR-BROWSER.pre.sh
+
+# POST
 GIT.sh
 TRANSMISSION.sh
 TNSPARC.sh
+#YT-DLP.sh
