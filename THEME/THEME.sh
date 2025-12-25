@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # MODULE NAME
-MODULE_NAME="GSETTINGS"
+MODULE_NAME="THEME"
 
 # STATION INFO
 source "$HOME/.station-info"
@@ -19,8 +19,17 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-gsettings set org.cinnamon.desktop.background.slideshow random-order true
-gsettings set org.cinnamon.desktop.background.slideshow delay 5
+# Mint-Y-Teal icons
+gsettings set org.cinnamon.desktop.interface icon-theme 'Mint-Y-Teal'
+gsettings set org.gnome.desktop.interface icon-theme 'Mint-Y-Teal'
+
+# Mint-Y-Dark-Teal theme
+gsettings set org.cinnamon.desktop.interface gtk-theme 'Mint-Y-Dark-Teal'
+gsettings set org.gnome.desktop.interface gtk-theme 'Mint-Y-Dark-Teal'
+
+# Inverted images for station-setup
+sudo cp "${MODULE_DIR}/images/station-setup-banner.png" /opt/arcOS/images/
+sudo cp "${MODULE_DIR}/images/select-operator.png" /opt/arcOS/images/
 
 } # END OF MODULE COMMANDS FUNCTION
 
