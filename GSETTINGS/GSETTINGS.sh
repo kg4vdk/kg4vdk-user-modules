@@ -20,7 +20,7 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 module_commands () {
 
 gsettings set org.cinnamon.desktop.background.slideshow random-order true
-gsettings set org.cinnamon.desktop.background.slideshow delay 15
+gsettings set org.cinnamon.desktop.background.slideshow delay 5
 
 } # END OF MODULE COMMANDS FUNCTION
 
