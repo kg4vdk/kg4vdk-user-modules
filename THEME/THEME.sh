@@ -19,17 +19,23 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
+COLOR="Teal"
+
 # Mint-Y-Teal icons
-gsettings set org.cinnamon.desktop.interface icon-theme 'Mint-Y-Teal'
-gsettings set org.gnome.desktop.interface icon-theme 'Mint-Y-Teal'
+gsettings set org.cinnamon.desktop.interface icon-theme "Mint-Y-${COLOR}"
+gsettings set org.gnome.desktop.interface icon-theme "Mint-Y-${COLOR}"
 
 # Mint-Y-Dark-Teal theme
-gsettings set org.cinnamon.desktop.interface gtk-theme 'Mint-Y-Dark-Teal'
-gsettings set org.gnome.desktop.interface gtk-theme 'Mint-Y-Dark-Teal'
+gsettings set org.cinnamon.desktop.interface gtk-theme "Mint-Y-Dark-${COLOR}"
+gsettings set org.gnome.desktop.interface gtk-theme "Mint-Y-Dark-${COLOR}"
+
+# Make Downloads fold match
+gio set /arcHIVE/Downloads metadata::custom-icon file:///usr/share/icons/Mint-Y-${COLOR}/places/64/folder-download.png
+touch /arcHIVE/Downloads
 
 # Inverted images for station-setup
-sudo cp "${MODULE_DIR}/images/station-setup-banner.png" /opt/arcOS/images/
-sudo cp "${MODULE_DIR}/images/select-operator.png" /opt/arcOS/images/
+sudo cp "${MODULE_DIR}/images/station-setup-banner_dark.png" /opt/arcOS/images/
+sudo cp "${MODULE_DIR}/images/select-operator_dark.png" /opt/arcOS/images/
 
 } # END OF MODULE COMMANDS FUNCTION
 
