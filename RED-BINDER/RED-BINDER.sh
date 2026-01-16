@@ -30,14 +30,14 @@ fi
 
 ICONS_PATH="${MODULE_DIR}/icons"
 
-COLOR_01="red"
-COLOR_02="pink"
-COLOR_03="orange"
-COLOR_04="yellow"
-COLOR_05="green"
-COLOR_06="blue"
-COLOR_07="indigo"
-COLOR_08="violet"
+COLOR_01="yellow"
+COLOR_02="orange"
+COLOR_03="red"
+COLOR_04="pink"
+COLOR_05="violet"
+COLOR_06="indigo"
+COLOR_07="blue"
+COLOR_08="green"
 COLOR_09="black"
 COLOR_10="grey"
 
