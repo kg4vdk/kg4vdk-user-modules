@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # MODULE NAME
-MODULE_NAME="TRANSMISSION"
+MODULE_NAME="OBSIDIAN"
 
 # STATION INFO
 source "$HOME/.station-info"
@@ -20,21 +20,31 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 module_commands () {
 
 SAVE_DIR="${ARCHIVE}/QRV/${MYCALL}/SAVED/${MODULE_NAME}"
-mkdir -p "${SAVE_DIR}/config/transmission"
+mkdir -p $SAVE_DIR
 
-if [ ! -f "${SAVE_DIR}/config/transmission/settings.json" ]; then
-	cp "${MODULE_DIR}/config/transmission/settings.json" "${SAVE_DIR}/config/transmission/settings.json"
+CONFIG_DIR="$HOME/.config/obsidian"
+FS_PATH="${SAVE_DIR}/obsidian-fs"
+
+if grep "obsidian" /etc/mtab; then
+	sudo umount "${CONFIG_DIR}"
 fi
 
-unlink "$HOME/.config/transmission"
-rm -rf "$HOME/.config/transmission"
-ln -sTf "${SAVE_DIR}/config/transmission" "$HOME/.config/transmission"
+rm -rf "${CONFIG_DIR}"
+mkdir -p "${CONFIG_DIR}"
 
-if ! pidof transmission-gtk; then
-	transmission-gtk &
+if [ ! -f "${FS_PATH}" ]; then
+	dd if=/dev/zero of="${FS_PATH}" bs=1M count=512
+	mkfs.ext4 "${FS_PATH}"
+	sudo mount "${FS_PATH}" "${CONFIG_DIR}"
+	sudo chown user:user "${CONFIG_DIR}"
+	sudo chmod 700 "${CONFIG_DIR}"
+	sudo umount "${CONFIG_DIR}"
 fi
+
+sudo mount "${FS_PATH}" "${CONFIG_DIR}"
 
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
-module_commands > "${LOGFILE}" 2>&1 || notify-send --icon=error "${MODULE_NAME}" "${MODULE_NAME} module failed!"
+module_commands > $LOGFILE 2>&1 || echo "$MODULE" >> /tmp/.failed-modules.log
+
