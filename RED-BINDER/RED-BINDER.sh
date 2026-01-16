@@ -59,6 +59,8 @@ unlink "${LINK_PATH}"
 rm -rf "${LINK_PATH}"
 ln -sTf "${BINDER_PATH}" "${LINK_PATH}"
 
+gio set "${LINK_PATH}" metadata::custom-icon file://"${ICONS_PATH}"/folders/red-folder-star.png && touch "${LINK_PATH}"
+
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
