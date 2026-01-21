@@ -47,4 +47,3 @@ sudo mount "${FS_PATH}" "${CONFIG_DIR}"
 
 # Execute the module commands, and notify the user upon failure
 module_commands > $LOGFILE 2>&1 || echo "$MODULE_NAME" >> /tmp/.failed-modules.log
-
