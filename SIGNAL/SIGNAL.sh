@@ -26,7 +26,7 @@ CONFIG_DIR="$HOME/.config/Signal"
 FS_PATH="${SAVE_DIR}/signal-fs"
 
 if grep "Signal" /etc/mtab; then
-	sudo umount -l "${CONFIG_DIR}"
+	sudo umount "${CONFIG_DIR}"
 fi
 
 rm -rf "${CONFIG_DIR}"
