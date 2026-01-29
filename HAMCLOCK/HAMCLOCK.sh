@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # MODULE NAME
-MODULE_NAME="MINETEST"
+MODULE_NAME="HAMCLOCK"
 
 # STATION INFO
 source "$HOME/.station-info"
@@ -19,16 +19,18 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-killall minetest > /dev/null 2>&1
-
 SAVE_DIR="${ARCHIVE}/QRV/${MYCALL}/SAVED/${MODULE_NAME}"
-mkdir -p "${SAVE_DIR}"
+mkdir -p "${SAVE_DIR}"/bin
 
-if dpkg -s minetest > /dev/null 2>&1; then
-	mkdir -p "${SAVE_DIR}/minetest"
-	unlink "$HOME/.minetest"
-	rm -rf "$HOME/.minetest"
-	ln -sTf "${SAVE_DIR}/minetest" "$HOME/.minetest"
+if [ -f "${SAVE_DIR}/bin/hamclock" ]; then
+    sudo cp ${SAVE_DIR}/bin/hamclock /usr/local/bin/
+
+    mkdir -p $SAVE_DIR/hamclock
+    unlink $HOME/.hamclock
+    rm -rf $HOME/.hamclock
+    ln -sTf $SAVE_DIR/hamclock $HOME/.hamclock
+
+    hamclock -k -e 8073 &
 fi
 
 } # END OF MODULE COMMANDS FUNCTION
