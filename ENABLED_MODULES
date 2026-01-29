@@ -9,18 +9,23 @@
 # MODULE-1.pre.sh
 # MODULE-1.sh
 
-# PRE
+### PRE ###
 CUSTOM-ICONS.pre.sh
 TOR-BROWSER.pre.sh
 
-# POST
-#THEME.sh
+### POST ###
+THEME.sh
 SLIDESHOW.sh
 GIT.sh
 TRANSMISSION.sh
 TNSPARC.sh
 RED-BINDER.sh
 OBSIDIAN.sh
-SIGNAL.sh
 WX-RADAR-CONKY.sh
-#YT-DLP.sh
+YT-DLP.sh
+
+### DISABLED ###
+#FLIGHTAWARE-FEEDER.sh
+#HAMCLOCK.sh
+#MINETEST.sh
+#SIGNAL.sh

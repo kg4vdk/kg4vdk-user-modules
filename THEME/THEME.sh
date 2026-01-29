@@ -21,24 +21,32 @@ module_commands () {
 
 COLOR="Blue"
 
-# Cinnamon theme
-gsettings set org.cinnamon.theme name "Mint-Y-Dark-${COLOR}"
-
+# GSETTINGS
+#gsettings set org.cinnamon.theme name "Mint-Y-Dark-${COLOR}"
 # Mint-Y icons
-gsettings set org.cinnamon.desktop.interface icon-theme "Mint-Y-${COLOR}"
-gsettings set org.gnome.desktop.interface icon-theme "Mint-Y-${COLOR}"
-
+#gsettings set org.cinnamon.desktop.interface icon-theme "Mint-Y-${COLOR}"
+#gsettings set org.gnome.desktop.interface icon-theme "Mint-Y-${COLOR}"
 # Mint-Y-Dark theme
-gsettings set org.cinnamon.desktop.interface gtk-theme "Mint-Y-Dark-${COLOR}"
-gsettings set org.gnome.desktop.interface gtk-theme "Mint-Y-Dark-${COLOR}"
+#gsettings set org.cinnamon.desktop.interface gtk-theme "Mint-Y-Dark-${COLOR}"
+#gsettings set org.gnome.desktop.interface gtk-theme "Mint-Y-Dark-${COLOR}"
 
 # Make Downloads fold match
-gio set /arcHIVE/Downloads metadata::custom-icon file:///usr/share/icons/Mint-Y-${COLOR}/places/64/folder-download.png
-touch /arcHIVE/Downloads
+#gio set /arcHIVE/Downloads metadata::custom-icon file:///usr/share/icons/Mint-Y-${COLOR}/places/64/folder-download.png
+#touch /arcHIVE/Downloads
 
 # Inverted images for station-setup
-sudo cp "${MODULE_DIR}/images/station-setup-banner_dark.png" /opt/arcOS/images/station-setup-banner.png
-sudo cp "${MODULE_DIR}/images/select-operator_dark.png" /opt/arcOS/images/select-operator.png
+#sudo cp "${MODULE_DIR}/images/station-setup-banner_dark.png" /opt/arcOS/images/station-setup-banner.png
+#sudo cp "${MODULE_DIR}/images/select-operator_dark.png" /opt/arcOS/images/select-operator.png
+
+# Terminal preferences
+LEGACY_PROFILE=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${LEGACY_PROFILE}/ use-theme-colors 'false'
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${LEGACY_PROFILE}/ foreground-color '#FFFFFF'
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${LEGACY_PROFILE}/ background-color '#000000'
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${LEGACY_PROFILE}/ use-theme-transparency 'false'
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${LEGACY_PROFILE}/ use-transparent-background 'true'
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${LEGACY_PROFILE}/ background-transparency-percent '15'
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${LEGACY_PROFILE}/ scrollbar-policy 'always'
 
 } # END OF MODULE COMMANDS FUNCTION
 
