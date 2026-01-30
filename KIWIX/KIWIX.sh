@@ -21,8 +21,6 @@ module_commands () {
 
 $MODULE_DIR/kiwix-tools/kiwix-serve -d -p 1234 -M $ARCHIVE/QRV/.zim/*.zim
 
-cp $MODULE_DIR/applications/kiwix.desktop $HOME/.local/share/applications/
-
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
