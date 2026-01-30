@@ -30,7 +30,7 @@ gsettings set org.cinnamon.theme name "Mint-Y-Dark-${COLOR}"
 gsettings set org.cinnamon.desktop.interface gtk-theme "Mint-Y-Dark-${COLOR}"
 gsettings set org.gnome.desktop.interface gtk-theme "Mint-Y-Dark-${COLOR}"
 
-# Make Downloads fold match
+# Make Downloads folder match
 #gio set /arcHIVE/Downloads metadata::custom-icon file:///usr/share/icons/Mint-Y-${COLOR}/places/64/folder-download.png
 #touch /arcHIVE/Downloads
 
