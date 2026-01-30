@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=Kiwix
+Comment=Offline Knowledge
+GenericName=Kiwix
+Exec=firefox-esr http://localhost:1234
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=wikipedia
+StartupNotify=true
