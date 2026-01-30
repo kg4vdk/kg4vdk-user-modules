@@ -12,6 +12,7 @@
 ### PRE ###
 CUSTOM-ICONS.pre.sh
 TOR-BROWSER.pre.sh
+KIWIX.pre.sh
 
 ### POST ###
 THEME.sh
@@ -24,7 +25,6 @@ OBSIDIAN.sh
 WX-RADAR-CONKY.sh
 YT-DLP.sh
 MINETEST.sh
-KIWIX.sh
 
 ### DISABLED ###
 #FLIGHTAWARE-FEEDER.sh
