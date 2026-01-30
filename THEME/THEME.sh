@@ -19,24 +19,25 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-COLOR="Blue"
+COLOR="Teal"
 
 # GSETTINGS
-#gsettings set org.cinnamon.theme name "Mint-Y-Dark-${COLOR}"
+gsettings set org.cinnamon.theme name "Mint-Y-Dark-${COLOR}"
 # Mint-Y icons
-#gsettings set org.cinnamon.desktop.interface icon-theme "Mint-Y-${COLOR}"
-#gsettings set org.gnome.desktop.interface icon-theme "Mint-Y-${COLOR}"
+gsettings set org.cinnamon.desktop.interface icon-theme "Mint-Y-${COLOR}"
+gsettings set org.gnome.desktop.interface icon-theme "Mint-Y-${COLOR}"
 # Mint-Y-Dark theme
-#gsettings set org.cinnamon.desktop.interface gtk-theme "Mint-Y-Dark-${COLOR}"
-#gsettings set org.gnome.desktop.interface gtk-theme "Mint-Y-Dark-${COLOR}"
+gsettings set org.cinnamon.desktop.interface gtk-theme "Mint-Y-Dark-${COLOR}"
+gsettings set org.gnome.desktop.interface gtk-theme "Mint-Y-Dark-${COLOR}"
 
 # Make Downloads fold match
 #gio set /arcHIVE/Downloads metadata::custom-icon file:///usr/share/icons/Mint-Y-${COLOR}/places/64/folder-download.png
 #touch /arcHIVE/Downloads
 
 # Inverted images for station-setup
-#sudo cp "${MODULE_DIR}/images/station-setup-banner_dark.png" /opt/arcOS/images/station-setup-banner.png
-#sudo cp "${MODULE_DIR}/images/select-operator_dark.png" /opt/arcOS/images/select-operator.png
+sudo cp "${MODULE_DIR}/images/station-setup-banner_dark.png" /opt/arcOS/images/station-setup.png
+sudo cp "${MODULE_DIR}/images/select-operator_dark.png" /opt/arcOS/images/select-operator.png
+sudo cp "${MODULE_DIR}/images/station-setup-banner_dark.png" /opt/arcOS/images/restore-operator.png
 
 # Terminal preferences
 LEGACY_PROFILE=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
