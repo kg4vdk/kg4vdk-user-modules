@@ -39,6 +39,9 @@ sudo cp "${MODULE_DIR}/images/station-setup-banner_dark.png" /opt/arcOS/images/s
 sudo cp "${MODULE_DIR}/images/select-operator_dark.png" /opt/arcOS/images/select-operator.png
 sudo cp "${MODULE_DIR}/images/station-setup-banner_dark.png" /opt/arcOS/images/restore-operator.png
 
+# User image
+cp "${MODULE_DIR}/images/face.png" $HOME/.face
+
 # Terminal preferences
 LEGACY_PROFILE=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${LEGACY_PROFILE}/ use-theme-colors 'false'
