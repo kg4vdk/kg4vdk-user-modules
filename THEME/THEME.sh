@@ -40,7 +40,11 @@ sudo cp "${MODULE_DIR}/images/select-operator_dark.png" /opt/arcOS/images/select
 sudo cp "${MODULE_DIR}/images/station-setup-banner_dark.png" /opt/arcOS/images/restore-operator.png
 
 # User image
+<<<<<<< HEAD
 cp "${MODULE_DIR}/images/face.jpg" $HOME/.face
+=======
+cp "${MODULE_DIR}/images/face.png" $HOME/.face
+>>>>>>> a02a303bdcf224f8033454c6cf0295cdcf04a139
 
 # Terminal preferences
 LEGACY_PROFILE=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
