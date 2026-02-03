@@ -1,0 +1,9 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x000071d296c5fa34, pid=72457, tid=1421315
+#
+# JRE version: OpenJDK Runtime Environment (23.0.1+13) (build 23.0.1+13)
+# Java VM: OpenJDK 64-Bit Server VM (23.0.1+13, mixed mode, tiered, compressed oops, compressed class ptrs, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libc.so.6+0xaba34]
