@@ -5,10 +5,6 @@
 # Blank lines are ignored.
 ###############################################
 
-### EXAMPLES ###
-# MODULE-1.pre.sh
-# MODULE-1.sh
-
 ### PRE ###
 CUSTOM-ICONS.pre.sh
 TOR-BROWSER.pre.sh
@@ -21,12 +17,14 @@ TRANSMISSION.sh
 TNSPARC.sh
 RED-BINDER.sh
 OBSIDIAN.sh
+SIGNAL.sh
 WX-RADAR-CONKY.sh
 YT-DLP.sh
 MINETEST.sh
 KIWIX.sh
 
 ### DISABLED ###
+#DOCKER.sh
 #FLIGHTAWARE-FEEDER.sh
 #HAMCLOCK.sh
-#SIGNAL.sh
+
