@@ -35,16 +35,13 @@ gsettings set org.gnome.desktop.interface gtk-theme "Mint-Y-Dark-${COLOR}"
 #touch /arcHIVE/Downloads
 
 # Inverted images for station-setup
-sudo cp "${MODULE_DIR}/images/station-setup-banner_dark.png" /opt/arcOS/images/station-setup.png
-sudo cp "${MODULE_DIR}/images/select-operator_dark.png" /opt/arcOS/images/select-operator.png
-sudo cp "${MODULE_DIR}/images/station-setup-banner_dark.png" /opt/arcOS/images/restore-operator.png
+sudo cp "${MODULE_DIR}/images/station-setup.png" /opt/arcOS/images/station-setup.png
+sudo cp "${MODULE_DIR}/images/select-operator.png" /opt/arcOS/images/select-operator.png
+sudo cp "${MODULE_DIR}/images/restore-operator.png" /opt/arcOS/images/restore-operator.png
 
 # User image
-<<<<<<< HEAD
-cp "${MODULE_DIR}/images/face.jpg" $HOME/.face
-=======
 cp "${MODULE_DIR}/images/face.png" $HOME/.face
->>>>>>> a02a303bdcf224f8033454c6cf0295cdcf04a139
+
 
 # Terminal preferences
 LEGACY_PROFILE=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
