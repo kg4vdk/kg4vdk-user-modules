@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/usr/bin/sdrpp
+Name=SDR++
+Icon=/usr/share/sdrpp/icons/sdrpp.png
+Categories=Satellite & SDR
+StartupWMClass=SDR++ v1.2.1 (Built at 06:57:49, Dec 12 2025)

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # MODULE NAME
-MODULE_NAME="SIGNAL"
+MODULE_NAME="SDRPP"
 
 # STATION INFO
 source "$HOME/.station-info"
@@ -19,29 +19,19 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
+killall sdrpp > /dev/null 2>&1
+
 SAVE_DIR="${ARCHIVE}/QRV/${MYCALL}/SAVED/${MODULE_NAME}"
-mkdir -p $SAVE_DIR
+mkdir -p "${SAVE_DIR}"
 
-CONFIG_DIR="$HOME/.config/Signal"
-FS_PATH="${SAVE_DIR}/signal-fs"
-
-if grep "Signal" /etc/mtab; then
-	sudo umount "${CONFIG_DIR}"
+if dpkg -s sdrpp > /dev/null 2>&1; then
+	mkdir -p "${SAVE_DIR}/sdrpp"
+	unlink "$HOME/.config/sdrpp"
+	rm -rf "$HOME/.config/sdrpp"
+	ln -sTf "${SAVE_DIR}/sdrpp" "$HOME/.config/sdrpp"
 fi
 
-rm -rf "${CONFIG_DIR}"
-mkdir -p "${CONFIG_DIR}"
-
-if [ ! -f "${FS_PATH}" ]; then
-	dd if=/dev/zero of="${FS_PATH}" bs=1M count=2048
-	mkfs.ext4 "${FS_PATH}"
-	sudo mount "${FS_PATH}" "${CONFIG_DIR}"
-	sudo chown user:user "${CONFIG_DIR}"
-	sudo chmod 700 "${CONFIG_DIR}"
-	sudo umount "${CONFIG_DIR}"
-fi
-
-sudo mount "${FS_PATH}" "${CONFIG_DIR}"
+sudo cp ${MODULE_DIR}/applications/sdrpp.desktop /usr/share/applications/
 
 } # END OF MODULE COMMANDS FUNCTION
 

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Session
+GenericName=Session
+Comment=Session
+Exec=
+Icon=session-desktop
+Terminal=false
+Type=Application
+StartupWMClass=session

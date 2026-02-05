@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=SimpleX
+GenericName=SimpleX
+Comment=SimpleX
+Exec=
+Icon=simplex
+Terminal=false
+Type=Application
+StartupWMClass=chat-simplex-desktop-MainKt
