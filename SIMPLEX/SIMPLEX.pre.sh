@@ -28,15 +28,32 @@ if [ -f $HOME/.local/share/applications/simplex.desktop ]; then
 	rm $HOME/.local/share/applications/simplex.desktop
 fi
 
-mkdir -p "${SAVE_DIR}/config"
-unlink "$HOME/.config/simplex"
-rm -rf "$HOME/.config/simplex"
-ln -sTf "${SAVE_DIR}/config" "$HOME/.config/simplex"
+CONFIG_DIR="$HOME/.config/simplex"
+SHARE_DIR="$HOME/.local/share/simplex"
+FS_PATH="${SAVE_DIR}/simplex-fs"
 
-mkdir -p "${SAVE_DIR}/share"
-unlink "$HOME/.local/share/simplex"
-rm -rf "$HOME/.local/share/simplex"
-ln -sTf "${SAVE_DIR}/share" "$HOME/.local/share/simplex"
+if grep "simplex" /etc/mtab; then
+	sudo umount "${CONFIG_DIR}"
+	sudo umount "${SHARE_DIR}"
+fi
+
+rm -rf "${CONFIG_DIR}"
+mkdir -p "${CONFIG_DIR}"
+
+rm -rf "${SHARE_DIR}"
+mkdir -p "${SHARE_DIR}"
+
+if [ ! -f "${FS_PATH}" ]; then
+	dd if=/dev/zero of="${FS_PATH}" bs=1M count=512
+	mkfs.ext4 "${FS_PATH}"
+	sudo mount "${FS_PATH}" "${CONFIG_DIR}"
+	sudo chown user:user "${CONFIG_DIR}"
+	sudo chmod 700 "${CONFIG_DIR}"
+	sudo umount "${CONFIG_DIR}"
+fi
+
+sudo mount "${FS_PATH}" "${CONFIG_DIR}"
+sudo mount "${FS_PATH}" "${SHARE_DIR}"
 
 cp ${MODULE_DIR}/applications/simplex.desktop $HOME/.local/share/applications/
 

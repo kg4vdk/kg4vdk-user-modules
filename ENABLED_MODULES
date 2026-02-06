@@ -7,24 +7,26 @@
 
 ### PRE ###
 CUSTOM-ICONS.pre.sh
+OBSIDIAN.pre.sh
 TOR-BROWSER.pre.sh
+SESSION.pre.sh
+SIMPLEX.pre.sh
+SIGNAL.pre.sh
+SDRPP.pre.sh
 
 ### POST ###
 THEME.sh
 SLIDESHOW.sh
 GIT.sh
-OBSIDIAN.sh
 YT-DLP.sh
 MINETEST.sh
 KIWIX.sh
-SDRPP.sh
 TRANSMISSION.sh
 WX-RADAR-CONKY.sh
 
 TNSPARC.sh
 RED-BINDER.sh
-SESSION.sh
-SIGNAL.sh
+
 
 
 ### DISABLED ###
@@ -32,5 +34,5 @@ SIGNAL.sh
 #FLIGHTAWARE-FEEDER.sh
 #HAMCLOCK.sh
 #SDRTRUNK.sh
-#SIMPLEX.sh
+
 
