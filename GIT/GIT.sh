@@ -23,6 +23,7 @@ SAVE_DIR="${ARCHIVE}/QRV/${MYCALL}/SAVED/${MODULE_NAME}"
 mkdir -p "${SAVE_DIR}"
 
 if [ -f $SAVE_DIR/gitconfig ]; then
+	rm $HOME/.gitconfig
 	ln -sf $SAVE_DIR/gitconfig $HOME/.gitconfig
 else
 	touch $SAVE_DIR/gitconfig

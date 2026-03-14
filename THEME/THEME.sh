@@ -39,20 +39,6 @@ sudo cp "${MODULE_DIR}/images/station-setup.png" /opt/arcOS/images/station-setup
 sudo cp "${MODULE_DIR}/images/select-operator.png" /opt/arcOS/images/select-operator.png
 sudo cp "${MODULE_DIR}/images/restore-operator.png" /opt/arcOS/images/restore-operator.png
 
-# User image
-cp "${MODULE_DIR}/images/face.png" $HOME/.face
-
-
-# Terminal preferences
-LEGACY_PROFILE=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
-gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${LEGACY_PROFILE}/ use-theme-colors 'false'
-gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${LEGACY_PROFILE}/ foreground-color '#FFFFFF'
-gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${LEGACY_PROFILE}/ background-color '#000000'
-gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${LEGACY_PROFILE}/ use-theme-transparency 'false'
-gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${LEGACY_PROFILE}/ use-transparent-background 'true'
-gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${LEGACY_PROFILE}/ background-transparency-percent '15'
-gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${LEGACY_PROFILE}/ scrollbar-policy 'always'
-
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
