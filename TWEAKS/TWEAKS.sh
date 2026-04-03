@@ -23,6 +23,9 @@ module_commands () {
 jq '.["custom-format"].value = "%a, %b %d%n%H:%M:%S %Z"' $HOME/.config/cinnamon/spices/calendar@cinnamon.org/14.json > /tmp/14.json
 mv /tmp/14.json $HOME/.config/cinnamon/spices/calendar@cinnamon.org/14.json
 
+# Show seconds in screensaver clock
+gsettings set org.cinnamon.desktop.screensaver date-format '%a, %B %d%n%H:%M:%S %Z'
+
 # User image
 cp "${MODULE_DIR}/images/face.png" $HOME/.face
 
