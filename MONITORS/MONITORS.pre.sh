@@ -24,14 +24,7 @@ mkdir -p "${SAVE_DIR}"
 
 if [ -f $SAVE_DIR/cinnamon-monitors.xml ]; then
 	rm $HOME/.config/cinnamon-monitors.xml
-	ln -sf $SAVE_DIR/cinnamon-monitors.xml $HOME/.config/cinnamon-monitors.xml
-else
-	cat << EOF $SAVE_DIR/cinnamon-monitors.xml
-	<monitors>
-	</monitors>
-	EOF
-	rm $HOME/.config/cinnamon-monitors.xml
-	ln -sf $SAVE_DIR/cinnamon-monitors.xml $HOME/.config/cinnamon-monitors.xml
+	cp $SAVE_DIR/cinnamon-monitors.xml $HOME/.config/cinnamon-monitors.xml
 fi
 
 } # END OF MODULE COMMANDS FUNCTION

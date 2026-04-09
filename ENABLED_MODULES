@@ -6,6 +6,7 @@
 ###############################################
 
 ### PRE ###
+MONITORS.pre.sh
 CUSTOM-ICONS.pre.sh
 OBSIDIAN.pre.sh
 TOR-BROWSER.pre.sh
@@ -14,7 +15,6 @@ SIMPLEX.pre.sh
 SIGNAL.pre.sh
 
 ### POST ###
-MONITORS.sh
 TWEAKS.sh
 SLIDESHOW.sh
 GIT.sh
