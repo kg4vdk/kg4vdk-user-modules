@@ -10,8 +10,6 @@ MONITORS.pre.sh
 CUSTOM-ICONS.pre.sh
 OBSIDIAN.pre.sh
 TOR-BROWSER.pre.sh
-SESSION.pre.sh
-SIMPLEX.pre.sh
 SIGNAL.pre.sh
 
 ### POST ###
@@ -35,6 +33,8 @@ RED-BINDER.sh
 #HAMCLOCK.sh
 #SDRTRUNK.sh
 #SDRPP.pre.sh
+#SESSION.pre.sh
+#SIMPLEX.pre.sh
 #THEME.sh
 
 
