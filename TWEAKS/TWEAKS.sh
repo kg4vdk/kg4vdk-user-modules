@@ -39,6 +39,12 @@ gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profi
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${LEGACY_PROFILE}/ background-transparency-percent '15'
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${LEGACY_PROFILE}/ scrollbar-policy 'always'
 
+# Ask for away message when locking screen from menu
+gsettings set org.cinnamon.desktop.screensaver ask-for-away-message true
+
+# Change user's fullname
+sudo chfn -f "Mike F." user
+
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
