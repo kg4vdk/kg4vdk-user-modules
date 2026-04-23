@@ -10,15 +10,12 @@ MONITORS.pre.sh
 CUSTOM-ICONS.pre.sh
 OBSIDIAN.pre.sh
 TOR-BROWSER.pre.sh
-SIGNAL.pre.sh
 
 ### POST ###
 TWEAKS.sh
-SLIDESHOW.sh
 GIT.sh
 YT-DLP.sh
 MINETEST.sh
-KIWIX.sh
 #TRANSMISSION.sh
 WX-RADAR-CONKY.sh
 FLIGHTAWARE-FEEDER.sh
@@ -26,7 +23,6 @@ FLIGHTAWARE-FEEDER.sh
 TNSPARC.sh
 RED-BINDER.sh
 
-WOL.sh
 SCREENLOCK.sh
 
 
@@ -34,10 +30,13 @@ SCREENLOCK.sh
 ### DISABLED ###
 #DOCKER.sh
 #HAMCLOCK.sh
+#KIWIX.sh
 #SDRTRUNK.sh
 #SDRPP.pre.sh
 #SESSION.pre.sh
+#SIGNAL.pre.sh
 #SIMPLEX.pre.sh
 #THEME.sh
+#WOL.sh
 
 

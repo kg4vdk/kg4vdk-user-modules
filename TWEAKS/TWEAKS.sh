@@ -19,6 +19,10 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
+# Slideshow tweaks (random and faster)
+gsettings set org.cinnamon.desktop.background.slideshow random-order true
+gsettings set org.cinnamon.desktop.background.slideshow delay 5
+
 # Show seconds in panel clock
 jq '.["custom-format"].value = "%a, %b %d%n%H:%M:%S %Z"' $HOME/.config/cinnamon/spices/calendar@cinnamon.org/14.json > /tmp/14.json
 mv /tmp/14.json $HOME/.config/cinnamon/spices/calendar@cinnamon.org/14.json

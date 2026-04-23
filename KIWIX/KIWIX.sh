@@ -19,7 +19,13 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-$MODULE_DIR/kiwix-tools/kiwix-serve -d -p 1234 -M $ARCHIVE/QRV/.zim/*.zim
+ZIM_SIZE=$(du -bs /arcHIVE/QRV/.zim | awk -F " " '{print $1}')
+
+if [[ $ZIM_SIZE -gt 10000000000 ]]; then
+	notify-send --icon=wikipedia "Starting Kiwix..." "Library size: $(echo "$ZIM_SIZE" | numfmt --to=iec)"
+fi
+
+time $MODULE_DIR/kiwix-tools/kiwix-serve -d -p 1234 -M $ARCHIVE/QRV/.zim/*.zim
 
 } # END OF MODULE COMMANDS FUNCTION
 
