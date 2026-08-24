@@ -30,9 +30,6 @@ mv /tmp/14.json $HOME/.config/cinnamon/spices/calendar@cinnamon.org/14.json
 # Show seconds in screensaver clock
 gsettings set org.cinnamon.desktop.screensaver date-format '%a, %B %d%n%H:%M:%S %Z'
 
-# User image
-cp "${MODULE_DIR}/images/face.png" $HOME/.face
-
 # Terminal preferences
 LEGACY_PROFILE=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${LEGACY_PROFILE}/ use-theme-colors 'false'
@@ -47,7 +44,15 @@ gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profi
 gsettings set org.cinnamon.desktop.screensaver ask-for-away-message true
 
 # Change user's fullname
-sudo chfn -f "Mike F." user
+sudo chfn -f "Mike Fisher" user
+
+# Add pat service restart to cron
+if ! grep "pat@user.service" /etc/crontab; then
+cat << EOF | sudo tee --append /etc/crontab
+30 6 * * * root systemctl restart pat@user.service
+EOF
+sudo systemctl restart cron.service
+fi
 
 } # END OF MODULE COMMANDS FUNCTION
 

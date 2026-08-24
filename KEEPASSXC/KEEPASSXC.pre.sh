@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # MODULE NAME
-MODULE_NAME="CUSTOM-ICONS"
+MODULE_NAME="KEEPASSXC"
 
 # STATION INFO
 source "$HOME/.station-info"
@@ -19,16 +19,13 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.log"
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-SAVE_DIR="${ARCHIVE}/QRV/${MYCALL}/SAVED/${MODULE_NAME}"
-mkdir -p "${SAVE_DIR}"
-
-cp -a ${SAVE_DIR}/custom-icons/* $HOME/.local/share/icons/
-
-# Set firefox icon
-sudo sed -i 's/^Icon=.*$/Icon=web-browser/' /usr/share/applications/firefox-esr.desktop
+if [ -f $ARCHIVE/QRV/$MYCALL/SAVED/$MODULE_NAME/keepassxc.AppImage ]; then
+	mkdir -p $ARCHIVE/QRV/$MYCALL/SAVED/$MODULE_NAME/keepassxc.AppImage.home
+fi
+cp ${MODULE_DIR}/applications/keepassxc.desktop $HOME/.local/share/applications/
+sed -i "s:^Exec=.*$:Exec=$ARCHIVE/QRV/$MYCALL/SAVED/$MODULE_NAME/keepassxc.AppImage:" $HOME/.local/share/applications/keepassxc.desktop
 
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
 module_commands > $LOGFILE 2>&1 || echo "$MODULE_NAME" >> /tmp/.failed-modules.log
-

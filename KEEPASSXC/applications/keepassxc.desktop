@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=KeePassXC
+GenericName=KeePassXC
+Comment=KeePassXC
+Exec=
+Icon=keepassxc
+Terminal=false
+Type=Application
+StartupWMClass=keepassxc
