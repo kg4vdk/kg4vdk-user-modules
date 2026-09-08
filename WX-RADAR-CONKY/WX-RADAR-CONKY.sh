@@ -128,7 +128,7 @@ sed -i "s/XXX/${XXX}/" /tmp/wx-conkyrc
 sed -i "s/YYY/${YYY}/" /tmp/wx-conkyrc
 if [ "${INTEGRATED}" == "true" ]; then
 	sed -i "s/alignment = 'top_right'/alignment = 'bottom_right'/" /tmp/wx-conkyrc
-	sed -i "s/gap_y = 5/gap_y = 425/" /tmp/wx-conkyrc
+	sed -i "s/gap_y = 5/gap_y = 440/" /tmp/wx-conkyrc
 fi
 
 # Start WX conky
