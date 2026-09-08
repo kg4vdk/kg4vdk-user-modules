@@ -54,6 +54,11 @@ EOF
 sudo systemctl restart cron.service
 fi
 
+# Disable Gnome calendar (since I use TB instead)
+sudo mv /usr/share/applications/org.gnome.Calendar.desktop /usr/share/applications/org.gnome.Calendar.desktop.disabled
+
+sudo mv /usr/bin/gnome-calendar /usr/bin/gnome-calendar.disabled
+
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure

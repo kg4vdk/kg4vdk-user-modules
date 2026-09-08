@@ -8,18 +8,26 @@
 ### PRE ###
 MONITORS.pre.sh
 CUSTOM-ICONS.pre.sh
-OBSIDIAN.pre.sh
+#OBSIDIAN.pre.sh
 TOR-BROWSER.pre.sh
 KEEPASSXC.pre.sh
 PUBLII.pre.sh
+STICKY.pre.sh
+TWEAKS.pre.sh
 
 ### POST ###
+BIN.sh
+SYSTEMD.sh
 TWEAKS.sh
+#BLUETOOTH.sh
 GNUPG-SSH.sh
+VERACRYPT.sh
 GIT.sh
 LIBREOFFICE.sh
 YT-DLP.sh
 MINETEST.sh
 WX-RADAR-CONKY.sh
 VNC.sh
+QRV-PROFILE.sh
 SCREENLOCK.sh
+AUTOSTART.sh
