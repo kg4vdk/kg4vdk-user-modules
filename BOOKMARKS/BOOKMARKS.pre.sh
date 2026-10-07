@@ -19,7 +19,7 @@ LOGFILE="${MODULE_DIR}/${MODULE_NAME}.pre.log"
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-	# Use custom bookmarks file
+	# Use custom bookmarks file for file browser
 	cp ${MODULE_DIR}/config/gtk-3.0/bookmarks $HOME/.config/gtk-3.0/bookmarks
 
 } # END OF MODULE COMMANDS FUNCTION
