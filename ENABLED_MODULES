@@ -6,6 +6,7 @@
 ###############################################
 
 ### PRE ###
+BOOKMARKS.pre.sh
 MONITORS.pre.sh
 CUSTOM-ICONS.pre.sh
 #OBSIDIAN.pre.sh
@@ -14,6 +15,7 @@ KEEPASSXC.pre.sh
 PUBLII.pre.sh
 STICKY.pre.sh
 TWEAKS.pre.sh
+WX-APPLET.pre.sh
 
 ### POST ###
 BIN.sh

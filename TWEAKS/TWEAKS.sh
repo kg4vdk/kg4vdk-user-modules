@@ -55,9 +55,13 @@ sudo systemctl restart cron.service
 fi
 
 # Disable Gnome calendar (since I use TB instead)
-sudo mv /usr/share/applications/org.gnome.Calendar.desktop /usr/share/applications/org.gnome.Calendar.desktop.disabled
+if [ -f /usr/share/applications/org.gnome.Calendar.desktop ]; then
+	sudo mv /usr/share/applications/org.gnome.Calendar.desktop /usr/share/applications/org.gnome.Calendar.desktop.disabled
+fi
 
-sudo mv /usr/bin/gnome-calendar /usr/bin/gnome-calendar.disabled
+if [ -f /usr/bin/gnome-calendar ]; then
+	sudo mv /usr/bin/gnome-calendar /usr/bin/gnome-calendar.disabled
+fi
 
 } # END OF MODULE COMMANDS FUNCTION
 

@@ -1,0 +1,828 @@
+{
+    "layout": {
+        "type": "layout",
+        "pages": [
+            "providers",
+            "locations-page",
+            "presentation-section",
+            "units-page",
+            "info-section"
+        ],
+        "providers": {
+            "type": "page",
+            "title": "Weather",
+            "sections": [
+                "provider-options",
+                "weather-conditions"
+            ]
+        },
+        "locations-page": {
+            "type": "page",
+            "title": "Location",
+            "sections": [
+                "location-section",
+                "location-store"
+            ]
+        },
+        "presentation-section": {
+            "type": "page",
+            "title": "Presentation",
+            "sections": [
+                "panel-options",
+                "presentation"
+            ]
+        },
+        "units-page": {
+            "type": "page",
+            "title": "Other options",
+            "sections": [
+                "temp-unit-section",
+                "units-section",
+                "icons",
+                "keybindings"
+            ]
+        },
+        "info-section": {
+            "type": "page",
+            "title": "Help",
+            "sections": [
+                "more-info",
+                "submit-issue",
+                "debug-options",
+                "technical-automation"
+            ]
+        },
+        "location-section": {
+            "type": "section",
+            "title": "Location settings",
+            "keys": [
+                "manualLocation",
+                "geoclue",
+                "autoloc_provider",
+                "location",
+                "locationDescription"
+            ]
+        },
+        "technical-automation": {
+            "type": "section",
+            "title": "Technical and Automation",
+            "keys": [
+                "userAgentStringOverride",
+                "runScript",
+                "testRunScript"
+            ]
+        },
+        "location-store": {
+            "type": "section",
+            "title": "Saved Locations",
+            "keys": [
+                "locationList",
+                "saveLocation"
+            ]
+        },
+        "provider-options": {
+            "type": "section",
+            "title": "Weather Provider Options",
+            "keys": [
+                "dataService",
+                "openmeteo_label",
+                "openweathermap_label",
+                "metnorway_label",
+                "dmidenmark_label",
+                "deutscherwetterdienst_label",
+                "usweather_label",
+                "swissmeteo_label",
+                "metoffice_label",
+                "openweathermap_onecall_label",
+                "pirateweather_label",
+                "visualcrossing_label",
+                "weatherbit_label",
+                "tomorrowio_label",
+                "accuweather_label",
+                "weatherunderground_label",
+                "openweathermap_onecall_apikey",
+                "metoffice_forecast_apikey",
+                "metoffice_observations_apikey",
+                "pirateweather_apikey",
+                "visualcrossing_apikey",
+                "weatherbit_apikey",
+                "tomorrowio_apikey",
+                "accuweather_apikey",
+                "weatherunderground_apikey",
+                "refreshInterval",
+                "forecastDays",
+                "forecastHours",
+                "immediatePrecip",
+                "showAlerts",
+                "showSunrise",
+                "uvIndex"
+            ]
+        },
+        "weather-conditions": {
+            "type": "section",
+            "title": "Weather conditions",
+            "keys": [
+                "translateCondition",
+                "shortConditions"
+            ]
+        },
+        "panel-options": {
+            "type": "section",
+            "title": "Panel (Taskbar)",
+            "keys": [
+                "showTextInPanel",
+                "showCommentInPanel",
+                "tempTextOverride",
+                "tooltipTextOverride"
+            ]
+        },
+        "presentation": {
+            "type": "section",
+            "title": "Popup menu",
+            "keys": [
+                "verticalOrientation",
+                "forecastColumns",
+                "forecastRows",
+                "alwaysShowHourlyWeather",
+                "show24Hours",
+                "showForecastDates",
+                "shortHourlyTime",
+                "temperatureHighFirst",
+                "displayWindAsText",
+                "locationLabelOverride"
+            ]
+        },
+        "units-section": {
+            "type": "section",
+            "title": "Other Units",
+            "keys": [
+                "windSpeedUnit",
+                "pressureUnit",
+                "distanceUnit"
+            ]
+        },
+        "temp-unit-section": {
+            "type": "section",
+            "title": "Temperature Unit",
+            "keys": [
+                "temperatureUnit",
+                "showBothTempUnits",
+                "tempRussianStyle"
+            ]
+        },
+        "icons": {
+            "type": "section",
+            "title": "Icons",
+            "keys": [
+                "useSymbolicIcons",
+                "useCustomMenuIcons",
+                "useCustomAppletIcons"
+            ]
+        },
+        "keybindings": {
+            "type": "section",
+            "title": "Keybindings",
+            "keys": [
+                "keybinding"
+            ]
+        },
+        "more-info": {
+            "type": "section",
+            "title": "More about the Weather applet",
+            "keys": [
+                "more-info-label",
+                "getLocation"
+            ]
+        },
+        "submit-issue": {
+            "type": "section",
+            "title": "Report an issue",
+            "keys": [
+                "issue-reporting-explanation",
+                "submitIssue",
+                "maintainer"
+            ]
+        },
+        "debug-options": {
+            "type": "section",
+            "title": "Debug",
+            "keys": [
+                "logLevel",
+                "fileSelect"
+            ]
+        }
+    },
+    "keybinding": {
+        "type": "keybinding",
+        "description": "Set the keybinding to call the menu",
+        "default": "<Super><Shift>w",
+        "value": "<Super><Shift>w"
+    },
+    "dataService": {
+        "type": "radiogroup",
+        "default": "OpenMeteo",
+        "description": "Data service",
+        "tooltip": "You can choose between several different weather forecast providers. Some providers require a API key to work, some have regional limits, differ in forecast length, and they all need a functional internet connection to work. The options are described in detail on the Cinnamon Spices Website which you can access with the button on the Help tab.",
+        "options": {
+            "Open-Meteo": "OpenMeteo",
+            "OpenWeatherMap": "OpenWeatherMap_Open",
+            "MET Norway": "MetNorway",
+            "DMI Denmark": "DanishMI",
+            "Deutscher Wetterdienst (Germany only)": "DeutscherWetterdienst",
+            "US National Weather (US only)": "US Weather",
+            "Swiss M\u00e9t\u00e9o (Switzerland only)": "Swiss Meteo",
+            "Met Office UK (key needed)": "Met Office UK",
+            "OpenWeatherMap OneCall (key needed)": "OpenWeatherMap_OneCall",
+            "Pirate Weather (key needed)": "PirateWeather",
+            "Visual Crossing (key needed)": "Visual Crossing",
+            "Weatherbit (key needed)": "Weatherbit",
+            "Tomorrow.io (key needed)": "Tomorrow.io",
+            "AccuWeather (key needed)": "AccuWeather",
+            "Weather Underground (key needed)": "WeatherUnderground"
+        },
+        "value": "US Weather"
+    },
+    "openmeteo_label": {
+        "type": "label",
+        "description": "Open-Meteo is a free weather service that does not require an API key. It provides global weather data with various parameters and forecast lengths. More information can be found at open-meteo.com.",
+        "dependency": "dataService=OpenMeteo"
+    },
+    "openweathermap_label": {
+        "type": "label",
+        "description": "Worldwide Online Weather service by OpenWeather Ltd founded in 2012 with headquarters in London UK. Read more about the service at openweathermap.org.",
+        "dependency": "dataService=OpenWeatherMap_Open"
+    },
+    "metnorway_label": {
+        "type": "label",
+        "description": "Free meteorological data and forecasts from the Norwegian Meteorological Institute founded in 1866. Read more about the service at www.met.no/en.\n\n - Nowcast (Immediate precipitation and granular observations) is not available outside Norway. In that case, observations are shown for the next hour.\n - Daily forecasts are generated from 6 hour forecasts (for every hour), so there is a possibility that they are inaccurate sometimes.\n - Alerts are only available in Norway",
+        "dependency": "dataService=MetNorway"
+    },
+    "dmidenmark_label": {
+        "type": "label",
+        "description": "The Danish Meteorological Institute formed in 1872 and makes weather forecasts and observations for Denmark, Greenland, and the Faroe Islands. Read more about the institute at www.dmi.dk.",
+        "dependency": "dataService=DanishMI"
+    },
+    "deutscherwetterdienst_label": {
+        "type": "label",
+        "description": "German National Weather Provider. Read more about the institute at www.dwd.de.",
+        "dependency": "dataService=DeutscherWetterdienst"
+    },
+    "usweather_label": {
+        "type": "label",
+        "description": "The National Weather Service in the USA is a federal government agency formed in 1861. Read more about the service at www.weather.gov.\n\n - Only covers the US\n - Sometimes it takes 10-15 seconds to obtain weather, please be patient when it loads up the first time\n - Observations are quite spotty so it combines multiple observation stations if needed in a 50km area",
+        "dependency": "dataService=US Weather"
+    },
+    "swissmeteo_label": {
+        "type": "label",
+        "description": "Swiss national weather service. Read more about the service at www.meteoswiss.admin.ch.\n\n - Only covers Switzerland\n - You need to use your post code instead of coordinates",
+        "dependency": "dataService=Swiss Meteo"
+    },
+    "metoffice_label": {
+        "type": "label",
+        "description": "The Meteorological Office, abbreviated as the Met Office, is the UK's national weather service founded in 1854. Read more about the service at www.metoffice.gov.uk.\n\n - You only have 360 calls a day free, the applet uses 2 at a time so minimum of 15 minutes refresh time is recommended.\n - To get API keys, register at datahub.metoffice.gov.uk",
+        "dependency": "dataService=Met Office UK"
+    },
+    "openweathermap_onecall_label": {
+        "type": "label",
+        "description": "Version of OpenWeatherMap that supports more features (as before), but needs an API key. Make sure your call limit is 1000 calls/day to avoid charges. Read more about the service at openweathermap.org/api/one-call-api.",
+        "dependency": "dataService=OpenWeatherMap_OneCall"
+    },
+    "pirateweather_label": {
+        "type": "label",
+        "description": "Pirate Weather is a free open source weather service that provides weather data that is compatible with the Dark Sky API. Read more about the service at pirateweather.net.",
+        "dependency": "dataService=PirateWeather"
+    },
+    "visualcrossing_label": {
+        "type": "label",
+        "description": "Weather service from Visual Crossing Corporation founded in 2003 with headquarters in USA and Germany. Read more about the service at visualcrossing.com.\n\n - Provides 1000 Free calls a day\n - Needs an API key",
+        "dependency": "dataService=Visual Crossing"
+    },
+    "weatherbit_label": {
+        "type": "label",
+        "description": "Historical and Forecast Weather data service provided by Weatherbit LLC in the USA.. Read more about the service at weatherbit.io.\n\n - At least 1 hour refresh rate is recommended, otherwise you might exceed you daily quota. The Free API subscription is limited to 50 calls per day.\n - Needs an API key\n - Using alerts will increase call usage by 33%\n - Hourly Weather forecast is supported but requires a non-free account.",
+        "dependency": "dataService=Weatherbit"
+    },
+    "tomorrowio_label": {
+        "type": "label",
+        "description": "Meteorological data from American weather technology company with headquarters in Boston since 2016. Read more about the service at tomorrow.io.\n\n - Free plan includes 1000 calls per day\n - Needs an API key",
+        "dependency": "dataService=Tomorrow.io"
+    },
+    "accuweather_label": {
+        "type": "label",
+        "description": "Online Service from company AccuWeather Inc, founded in 1962 with headquarters in the US, provides a global weather source. Read more about the service at accuweather.com.\n\n - With the free plan, there are only a very limited number of calls for a day, remaining number of calls are shown in the applet tooltip\n - Needs an API key",
+        "dependency": "dataService=AccuWeather"
+    },
+    "weatherunderground_label": {
+        "type": "label",
+        "description": "Weather Underground is a privately owned, web-based weather information company. It provides weather observations and forecasts in a large number of locations around the world. It's headquarters in Ann Arbor United States. Read more about the service at wunderground.com.\n\n - Only allows 1500 calls a day, so 15min refresh cycle is recommended\n - Needs an API key\n - Current weather condition come from forecast",
+        "dependency": "dataService=WeatherUnderground"
+    },
+    "metoffice_forecast_apikey": {
+        "type": "entry",
+        "default": "",
+        "description": "Forecasts API Key",
+        "dependency": "dataService=Met Office UK",
+        "tooltip": "Subscribe to 'Site Specific' -> 'Global Spot' Free plan to get this key.",
+        "value": ""
+    },
+    "metoffice_observations_apikey": {
+        "type": "entry",
+        "default": "",
+        "description": "Observations API Key",
+        "dependency": "dataService=Met Office UK",
+        "tooltip": "Subscribe to 'Observations' -> 'Land Observations' Free plan to get this key.",
+        "value": ""
+    },
+    "openweathermap_onecall_apikey": {
+        "type": "entry",
+        "default": "",
+        "description": "OpenWeatherMap OneCall API Key",
+        "dependency": "dataService=OpenWeatherMap_OneCall",
+        "tooltip": "Copy this from your account at openweathermap.org and paste it here.",
+        "value": ""
+    },
+    "pirateweather_apikey": {
+        "type": "entry",
+        "default": "",
+        "description": "Pirate Weather API Key",
+        "dependency": "dataService=PirateWeather",
+        "tooltip": "Copy this from your account at pirateweather.net and paste it here.",
+        "value": ""
+    },
+    "visualcrossing_apikey": {
+        "type": "entry",
+        "default": "",
+        "description": "Visual Crossing API Key",
+        "dependency": "dataService=Visual Crossing",
+        "tooltip": "Copy this from your account at visualcrossing.com and paste it here.",
+        "value": ""
+    },
+    "weatherbit_apikey": {
+        "type": "entry",
+        "default": "",
+        "description": "Weatherbit API Key",
+        "dependency": "dataService=Weatherbit",
+        "tooltip": "Copy this from your account at weatherbit.io and paste it here.",
+        "value": ""
+    },
+    "tomorrowio_apikey": {
+        "type": "entry",
+        "default": "",
+        "description": "Tomorrow.io API Key",
+        "dependency": "dataService=Tomorrow.io",
+        "tooltip": "Copy this from your account at tomorrow.io and paste it here.",
+        "value": ""
+    },
+    "accuweather_apikey": {
+        "type": "entry",
+        "default": "",
+        "description": "AccuWeather API Key",
+        "dependency": "dataService=AccuWeather",
+        "tooltip": "Copy this from your account at developer.accuweather.com and paste it here.",
+        "value": ""
+    },
+    "weatherunderground_apikey": {
+        "type": "entry",
+        "default": "",
+        "description": "Weather Underground API Key",
+        "dependency": "dataService=WeatherUnderground",
+        "tooltip": "Copy this from your account at www.wunderground.com/weather/api and paste it here.",
+        "value": ""
+    },
+    "apiKey": {
+        "type": "entry",
+        "default": "",
+        "description": "API Key - Hidden, only for backwards compatibility",
+        "value": ""
+    },
+    "manualLocation": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Manual Location",
+        "tooltip": "Enable this if your location is not accurate",
+        "value": false
+    },
+    "geoclue": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Prioritize GeoClue for location detection",
+        "tooltip": "Enable this to try to use GeoClue for automatic location detection first, if available. This may provide more accurate location information on devices with supporting hardware, but can be wildly inaccurate without. Will still fall back to IP-based location detection if GeoClue is not available or fails to provide location information.",
+        "dependency": "!manualLocation",
+        "value": false
+    },
+    "autoloc_provider": {
+        "type": "combobox",
+        "default": "fedora",
+        "description": "IP-based automatic location provider",
+        "options": {
+            "geoip.fedoraproject.org": "fedora",
+            "ipapi.com": "ipapi",
+            "geojs.io": "geojs",
+            "geoiplookup.io": "geoiplookup"
+        },
+        "dependency": "!manualLocation",
+        "tooltip": "Usually this doesn't need changed, some users have reported better accuracy, corporate network support or various country-wide bans with one or other.",
+        "value": "fedora"
+    },
+    "location": {
+        "type": "entry",
+        "default": "London,UK",
+        "dependency": "manualLocation",
+        "description": "Location",
+        "tooltip": "You can enter coordinates 'Latitude,Longitude' (e.g. 51.5085,-0.1257) or use 'City,Country-code' (e.g. London,UK) or try to enter {House number} {Street} {City/Town} {Postcode} {Country}. The search algorithm is very flexible with the format. After 3 seconds without typing the address you entered is replaced automatically for validating your choice. Powered by nominatim.openstreetmap.org.",
+        "value": "35.8467,-86.4885"
+    },
+    "locationDescription": {
+        "type": "label",
+        "dependency": "manualLocation",
+        "description": "If the location field matches a saved location's 'Search Entry' field, the saved location will be used instead."
+    },
+    "saveLocation": {
+        "type": "button",
+        "indent": true,
+        "description": "Save current location to storage",
+        "callback": "saveCurrentLocation",
+        "tooltip": "Saves location information to file so you can switch between them with buttons in the applet, which will appear if you have more than one."
+    },
+    "getLocation": {
+        "type": "button",
+        "indent": true,
+        "description": "Weather Applet at Cinnamon Spices Website",
+        "callback": "locationLookup",
+        "tooltip": "Opens webpage guide"
+    },
+    "refreshInterval": {
+        "type": "spinbutton",
+        "default": 15,
+        "min": 5,
+        "max": 360,
+        "units": "minutes",
+        "step": 5,
+        "description": "Update interval",
+        "tooltip": "If you are using a provider with API keys set it to an interval you won't run out of your quota with.",
+        "value": 15
+    },
+    "forecastDays": {
+        "type": "spinbutton",
+        "default": 3,
+        "min": 2,
+        "max": 16,
+        "units": "days",
+        "step": 1,
+        "description": "Forecast length",
+        "tooltip": "Maximum number of days that can be displayed, available number of data, maximum rows and columns setting in the Presentation tab will affect the final number.",
+        "value": 3
+    },
+    "forecastHours": {
+        "type": "spinbutton",
+        "default": 24,
+        "min": 3,
+        "max": 168,
+        "units": "hours",
+        "step": 1,
+        "description": "Hourly Forecast length",
+        "tooltip": "Maximum number of hours that can be displayed, available numbers of data will affect the final number.",
+        "value": 24
+    },
+    "immediatePrecip": {
+        "type": "checkbox",
+        "default": true,
+        "description": "Enable minutely precipitation forecast",
+        "tooltip": "If you'd like to use this make sure you use your exact coordinates/address as location to help its accuracy. See Feature map on website on support for your provider",
+        "value": true
+    },
+    "showAlerts": {
+        "type": "checkbox",
+        "default": true,
+        "description": "Enable displaying weather alerts",
+        "tooltip": "Alerts button will be visible in the popup menu if there are any active alerts for your location.",
+        "value": true
+    },
+    "temperatureUnit": {
+        "type": "radiogroup",
+        "default": "automatic",
+        "description": "Temperature unit",
+        "options": {
+            "Automatic": "automatic",
+            "Celsius": "celsius",
+            "Fahrenheit": "fahrenheit"
+        },
+        "tooltip": "Automatic will try to guess your preference based your current display language.",
+        "value": "fahrenheit"
+    },
+    "showBothTempUnits": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Show both temperature units at the same time",
+        "value": false
+    },
+    "windSpeedUnit": {
+        "type": "combobox",
+        "default": "automatic",
+        "description": "Wind speed unit",
+        "options": {
+            "Automatic": "automatic",
+            "km/h": "kph",
+            "mph": "mph",
+            "m/s": "m/s",
+            "knots": "Knots",
+            "Beaufort": "Beaufort"
+        },
+        "value": "mph"
+    },
+    "pressureUnit": {
+        "type": "combobox",
+        "default": "hPa",
+        "description": "Atmospheric pressure unit",
+        "options": {
+            "hPa": "hPa",
+            "in Hg": "in Hg",
+            "mm Hg": "mm Hg",
+            "psi": "psi",
+            "at": "at",
+            "atm": "atm",
+            "Pa": "Pa"
+        },
+        "value": "mm Hg"
+    },
+    "distanceUnit": {
+        "type": "combobox",
+        "default": "automatic",
+        "description": "Distance unit",
+        "options": {
+            "Automatic": "automatic",
+            "Metric": "metric",
+            "Imperial": "imperial"
+        },
+        "tooltip": "Automatic will try to guess your preference based your current display language.",
+        "value": "imperial"
+    },
+    "showTextInPanel": {
+        "type": "checkbox",
+        "default": true,
+        "description": "Display current temperature in panel",
+        "value": true
+    },
+    "showCommentInPanel": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Show the weather condition (e.g., \"Windy\", \"Clear\") in the panel",
+        "tooltip": "Only works with horizontal panels",
+        "value": false
+    },
+    "tempTextOverride": {
+        "type": "entry",
+        "default": "",
+        "description": "Override label on panel",
+        "tooltip": "Some of the available values are: {c} is condition, {t} is temperature and {u} is unit. Full list of values are available on the Cinnamon spices website.\nCan be used if label does not fit on vertical panel, among other smart things.",
+        "value": ""
+    },
+    "tooltipTextOverride": {
+        "type": "entry",
+        "default": "",
+        "description": "Override tooltip on panel",
+        "tooltip": "Has the same behavior and available values as 'Override label on panel'.",
+        "value": ""
+    },
+    "useCustomAppletIcons": {
+        "type": "checkbox",
+        "default": false,
+        "tooltip": "Iconset is weather-icons by Erik Flowers",
+        "description": "Use custom icons on the panel",
+        "value": false
+    },
+    "alwaysShowHourlyWeather": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Always show Hourly Weather",
+        "tooltip": "Hide/Show button will be hidden and Hourly weather will be permanently visible.",
+        "value": false
+    },
+    "verticalOrientation": {
+        "type": "checkbox",
+        "default": false,
+        "tooltip": "Displaying forecasts from top to bottom instead from left to right.",
+        "description": "Show forecast vertically",
+        "value": false
+    },
+    "forecastColumns": {
+        "type": "spinbutton",
+        "default": 4,
+        "min": 1,
+        "max": 16,
+        "units": "columns",
+        "step": 1,
+        "description": "Maximum number of columns for forecast",
+        "value": 4
+    },
+    "forecastRows": {
+        "type": "spinbutton",
+        "default": 4,
+        "min": 1,
+        "max": 16,
+        "units": "rows",
+        "step": 1,
+        "description": "Maximum number of rows for forecast",
+        "value": 4
+    },
+    "locationList": {
+        "type": "list",
+        "description": "Your saved locations",
+        "tooltip": "You have to make sure the Search entry field is unique and your Timezone is in the IANA time zone format (e.g. 'Europe/London')",
+        "columns": [
+            {
+                "id": "lat",
+                "title": "Latitude",
+                "type": "float",
+                "min": -85,
+                "max": 85,
+                "step": 0.000105
+            },
+            {
+                "id": "lon",
+                "title": "Longitude",
+                "type": "float",
+                "min": -180,
+                "max": 180,
+                "step": 0.000105
+            },
+            {
+                "id": "city",
+                "title": "City",
+                "type": "string"
+            },
+            {
+                "id": "country",
+                "title": "Country",
+                "type": "string"
+            },
+            {
+                "id": "timeZone",
+                "title": "Timezone",
+                "type": "string",
+                "default": ""
+            },
+            {
+                "id": "entryText",
+                "title": "Search entry",
+                "type": "string",
+                "default": ""
+            }
+        ],
+        "default": [],
+        "value": []
+    },
+    "showSunrise": {
+        "type": "checkbox",
+        "default": true,
+        "description": "Show sunrise / sunset times",
+        "value": true
+    },
+    "show24Hours": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Display time in 24 hour format",
+        "value": false
+    },
+    "temperatureHighFirst": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Show high temperature first in forecast",
+        "value": false
+    },
+    "displayWindAsText": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Display wind direction as text",
+        "tooltip": "Like SE, N instead of direction icons.",
+        "value": false
+    },
+    "shortHourlyTime": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Only display hours for hourly forecast time",
+        "tooltip": "Instead of 15:00 or 3:00 pm it will show up as 15 or 3 pm",
+        "value": false
+    },
+    "showForecastDates": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Display date for daily forecasts",
+        "tooltip": "Like \"Friday 15\"",
+        "value": false
+    },
+    "tempRussianStyle": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Show temperature Russian style",
+        "value": false
+    },
+    "locationLabelOverride": {
+        "type": "entry",
+        "default": "",
+        "description": "Override location label",
+        "value": ""
+    },
+    "translateCondition": {
+        "type": "checkbox",
+        "default": true,
+        "description": "Provider should translate conditions if available",
+        "tooltip": "Should your provider translate the conditions to your language if your locale is supported by the provider. Otherwise the applet will use it's own translation system.",
+        "value": true
+    },
+    "shortConditions": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Less verbose conditions",
+        "value": false
+    },
+    "useSymbolicIcons": {
+        "type": "checkbox",
+        "default": true,
+        "tooltip": "Does not apply to custom iconset, that is symbolic by default",
+        "description": "Use symbolic icons throughout the applet",
+        "value": true
+    },
+    "useCustomMenuIcons": {
+        "type": "checkbox",
+        "tooltip": "Iconset is weather-icons by Erik Flowers",
+        "default": false,
+        "description": "Use custom icons in the popup menu",
+        "value": false
+    },
+    "more-info-label": {
+        "type": "label",
+        "description": "For detailed information about the applet please go to the Spices Website to find info about known issues, troubleshooting, changelog and more by clicking the button below. Here you can ask questions etc in the comment section by logging in with your Github account."
+    },
+    "submitIssue": {
+        "type": "button",
+        "indent": true,
+        "description": "Submit an Issue",
+        "callback": "submitIssue",
+        "tooltip": "Opens webpage where you can fill out a new issue for the applet, needs a GitHub account.\n Please make sure that the issue is not already submitted."
+    },
+    "maintainer": {
+        "type": "label",
+        "description": "Current maintainer: ---"
+    },
+    "issue-reporting-explanation": {
+        "type": "label",
+        "description": "If you find an issue with this applet please make a report by clicking on the button below and login in with your Github account.\n\nBefore you start writing please make sure that the issue is not already submitted in the issues section and review your prefilled details in the issue description. Don't forget to add a short description in the top Title field next to the applet's name to make it easier for everyone to know what the issue is about. Logs with Debug level (which can be saved to a file below) are also appreciated."
+    },
+    "loc-info": {
+        "type": "label",
+        "description": "Your location in most cases work automatically but you can enter it manually by coordinates 'Latitude,Longitude' (e.g. 51.5085,-0.1257) or use 'City,Country-code' (e.g. London,UK) or try to enter {House number} {Street} {City/Town} {Postcode} {Country}. The search algorithm is very flexible with the format. After 3 seconds without typing the address you entered is replaced automatically for validating your choice."
+    },
+    "logLevel": {
+        "type": "combobox",
+        "default": "info",
+        "description": "Log Level",
+        "tooltip": "Info is the regular logging, Debug is debug, and Verbose also logs network request payloads. Changing this will only be effective on future logs. Only change it you are instructed or you know what you are doing.",
+        "options": {
+            "Info": "info",
+            "Debug": "debug",
+            "Verbose": "verbose"
+        },
+        "value": "info"
+    },
+    "fileSelect": {
+        "type": "custom",
+        "file": "LogSaver.py",
+        "widget": "FileSaver",
+        "description": "Click Save to save debug information to a file",
+        "tooltip": "This includes logs for the applet and the current settings with your API key redacted."
+    },
+    "selectedLogPath": {
+        "type": "entry",
+        "default": "",
+        "description": "Selected path to save Logs",
+        "value": ""
+    },
+    "userAgentStringOverride": {
+        "type": "entry",
+        "default": "",
+        "description": "User Agent String Override",
+        "tooltip": "If you have issues with the applet not working properly and you know the User Agent string is the problem you can try to override it. Only change it if you know what you are doing. This is a string that is sent to the server when the applet tries to get the weather data.",
+        "value": ""
+    },
+    "runScript": {
+        "type": "entry",
+        "default": "",
+        "description": "Run a command when the weather info changes",
+        "tooltip": "The applet will run the command you provide every time the weather data is updated. The command will be interpolated with the same values with the same format you can get in any of the overrides, in addition you get {full_data} which is the full current weather data. Interpolation with single brackets {xxx} will not be escaped, with double brackets {{xxxx}} they are wrapped in single quotes (') and all other single quotes are escaped inside. You can use this to integrate the weather data with other parts of your system. You can look up the full weather data structure via the link in the README.\n\nExample: 'notify-send \"The weather is {c} and the temperature is {t}{u}\"' will show a notification with the current weather condition and temperature.\n\nExample: 'echo {{full_data}} > /tmp/weather_data' will save the full weather data to a file in /tmp.",
+        "value": ""
+    },
+    "testRunScript": {
+        "type": "button",
+        "description": "Test your command",
+        "callback": "testRunScript"
+    },
+    "uvIndex": {
+        "type": "checkbox",
+        "default": true,
+        "description": "Enable displaying UV Index",
+        "tooltip": "If your provider supports it, the UV index will be shown in the popup menu next to sunrise/sunset times. It will not show if the UV index is low risk (0-2).",
+        "value": true
+    },
+    "__md5__": "7a0aaad6da5ccef747ba228a206dea20"
+}
